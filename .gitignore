@@ -85,7 +85,6 @@ Icon
 ._*
 
 # Custom
-/dist/
 /demo/js/angular-translate-latest.js
 /build/
 /tmp
