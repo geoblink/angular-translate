@@ -2374,6 +2374,26 @@ function $translate($STORAGE_KEY, $windowProvider, $translateSanitizationProvide
       return null;
     };
 
+    /**
+     * @ngdoc function
+     * @name pascalprecht.translate.$translate#extendTranslationTable
+     * @methodOf pascalprecht.translate.$translate
+     *
+     * @description
+     * Extends the current translationTable by the given language key with the given translationTable.
+     *
+     * @param {string} langKey A token which represents a translation id
+     * @param {object} translationTable A plain old JavaScript object that represents a translation table.
+     *
+     * @return {undefined}
+     */
+    $translate.extendTranslationTable = function (langKey, translationTable) {
+      langKey = langKey || $translate.use();
+      if (langKey && $translationTable[langKey]) {
+        angular.extend($translationTable[langKey], flatObject(translationTable));
+      }
+    };
+
     // Whenever $translateReady is being fired, this will ensure the state of $isReady
     var globalOnReadyListener = $rootScope.$on('$translateReady', function () {
       $onReadyDeferred.resolve();
