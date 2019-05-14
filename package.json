@@ -1,6 +1,6 @@
 {
-  "name": "angular-translate",
-  "version": "2.17.0",
+  "name": "@geoblink/angular-translate",
+  "version": "2.17.1",
   "description": "A translation module for AngularJS",
   "main": "dist/angular-translate.js",
   "repository": {
@@ -21,7 +21,7 @@
     "npm": ">=5"
   },
   "scripts": {
-    "prepare": "bower install",
+    "prepublishOnly": "bower install",
     "check-env": "node node_modules/fbjs-scripts/node/check-dev-engines.js package.json",
     "shipit": "npm run-script -s check-env && bower install && bower update && grunt prepare-release",
     "lint": "grunt lint",
